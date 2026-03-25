@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>token-gesture</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.10/p5.min.js"></script>
+    <script src="https://unpkg.com/ml5@1/dist/ml5.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+
+  <body>
+    <div class="nav">
+      <p>token gesture</p>
+    </div>
+
+    <a href="https://github.com/girlpage/token-gesture" target="_blank" class="github-btn">github</a>
+
+    <div class="camera-view" id="videoContainer"></div>
+
+    <div id="options-toolbar" class="closed">
+      <div class="toolbar-header" id="toggle-options">
+        <span>settings</span>
+        <span class="arrow">▸</span>
+      </div>
+      <div class="toolbar-content">
+        <label>hand mode</label>
+        <div id="handDropdownContainer"></div>
+
+        <label>fill</label>
+        <input type="color" id="fillColorPicker" value="#00c8ff">
+
+        <label>stroke</label>
+        <input type="color" id="strokeColorPicker" value="#ffffff">
+
+        <label>stroke weight</label>
+        <input type="range" id="strokeWeightPicker" min="1" max="50" value="2">
+
+        <label>opacity</label>
+        <div id="opacityDropdownContainer"></div>
+
+        <button id="recordBtn" class="record-button">record</button>
+      </div>
+    </div>
+
+    <script>
+      const toolbar = document.getElementById('options-toolbar');
+      const toggle = document.getElementById('toggle-options');
+      toggle.addEventListener('click', () => {
+        toolbar.classList.toggle('open');
+      });
+    </script>
+    <script src="sketch.js"></script>
+  </body>
+
+</html>
